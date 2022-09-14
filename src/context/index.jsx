@@ -1,11 +1,9 @@
 import React, { useState, createContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { api, createSession} from '../../service/api';
+
 //Auths :)
-
 export const AuthContext = createContext();
-
-export const AuthProvicer = ({children}) => {
+export const AuthProvider = ({children}) => {
     const navigate = useNavigate();
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true)
@@ -23,27 +21,24 @@ export const AuthProvicer = ({children}) => {
 
     const login = async (email, password) => {
         console.log('login auth', {email, password})
-        
-        const response = await createSession(email, password)
 
-        console.log('login', response.data)
+        console.log('login', { email, password})
 
-        const LoggedUser = response.data.user
-        const token = response.data.token;
+        const LoggedUser = {
+            id: '123', 
+            email,
+        }
     
         localStorage.setItem("user", JSON.stringify(LoggedUser))
-        localStorage.setItem("token", token)
 
-        api.defaults.headers.Autorization = `Bearer ${token}`
-
-        setUser(LoggedUser)
-        navigate('/')
+        if(password === 'secret') {
+            setUser(LoggedUser)
+            navigate('/')
+        }
     }
     const logout = () => {
         console.log("logout")
         localStorage.removeItem('user')
-        localStorage.removeItem('token')
-        api.defaults.headers.Autorization = null
         setUser(null)
         navigate('login')
     }
