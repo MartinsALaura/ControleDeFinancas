@@ -1,8 +1,7 @@
-import * as React from 'react';
-import {useContext} from 'react'
 import Button from '@mui/material/Button';
 import { AuthContext } from '../../context';
 import './home.css';
+import React, { useContext } from 'react';
 
 const HomePage = () => {
     const { authenticated,logout } = useContext(AuthContext);
