@@ -1,5 +1,8 @@
 import React, { useState, useContext } from 'react';
-import { AuthContext } from '../context';
+import { AuthContext } from '../../context';
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
+
 
 //CSS
 import './login.css';
@@ -22,8 +25,9 @@ const LoginPage = (props) => {
             <p>{String(authenticated)}</p>
             <form className='form'onSubmit={handleSubmit}>
                 <div className='field'>
-                    <label htmlFor='email'>Email:</label>
-                    <input 
+                    <TextField 
+                        label="Email" 
+                        variant="standard"
                         type='email' 
                         name='email' 
                         id='email' 
@@ -33,8 +37,9 @@ const LoginPage = (props) => {
                     />
                 </div>
                 <div className='field'>
-                    <label htmlFor="password">Password:</label>
-                    <input
+                    <TextField
+                        label='Password'
+                        variant="standard"
                         type='password'
                         name='password'
                         id='password'
@@ -44,7 +49,7 @@ const LoginPage = (props) => {
                     />
                 </div>
                 <div className='actions'>
-                    <button type='submit'>Enter</button>
+                    <Button variant="outlined" type='submit'>Enter</Button>
                 </div>
 
             </form>

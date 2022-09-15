@@ -14,11 +14,9 @@
 }
 #login .field{
     padding-bottom: 0.5rem;
+    align-items: center;
 }
-#login .field label{
-    display: block;
-}
-#login .field input {
+#login .field TextField {
     width: 100%;
 }
 #login .actions {

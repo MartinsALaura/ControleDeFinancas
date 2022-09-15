@@ -4,9 +4,9 @@ import {
     Routes, 
     Navigate
 } from 'react-router-dom';
-import LoginPage from "./components/login";
-import HomePage from "./components/home";
-import { AuthProvicer, AuthContext } from "./components/context";
+import LoginPage from "./pages/login";
+import HomePage from "./pages/home";
+import { AuthProvider, AuthContext } from "./context";
 import React, { useContext} from 'react';
 
 const AppRoutes = () =>{
@@ -26,7 +26,7 @@ const AppRoutes = () =>{
      
     return(
         <Router>
-            <AuthProvicer>
+            <AuthProvider>
                 <Routes>
                     <Route 
                         exact path='/login' 
@@ -41,7 +41,7 @@ const AppRoutes = () =>{
                         }
                     ></Route>
                 </Routes> 
-            </AuthProvicer>
+            </AuthProvider>
         </Router>
     )
 }
