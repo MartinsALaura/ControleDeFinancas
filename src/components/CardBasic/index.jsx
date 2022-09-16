@@ -6,30 +6,20 @@ import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
-const bull = (
-  <Box
-    component="span"
-    sx={{ display: 'inline-block', mx: '2px', transform: 'scale(0.8)' }}
-  >
-    •
-  </Box>
-);
-
-export default function BasicCard(props) {
+export default function BasicCard({Title, Icon, Value}) {
   return (
-    <Card sx={{ minWidth: 275 }}>
+    <Card sx={{ minWidth: 275 }}>  
       <CardContent>
         <Typography sx={{ fontSize: 16 }} color="text.secondary" gutterBottom>
-          {props.title}
+          {Title}
         </Typography>
-        <div >
         <Typography style={{fontWeight: 600}} variant="h5" component="div">
-          {`R$ ${props.value}`}
-        </Typography></div>
+          {`R$ ${Value}`}
+        </Typography>
       </CardContent>
-      <CardActions>
-        <Button size="small">Learn More</Button>
-      </CardActions>
+        <CardActions style={{justifyContent: 'flex-end',}}>
+          <Icon/>
+        </CardActions>
     </Card>
   );
 }

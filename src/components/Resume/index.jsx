@@ -1,28 +1,32 @@
 import react from 'react';
 import './resume.css';
-import CardBasic from '../CardBasic'
+import CardBasic from '../CardBasic';
+import { 
+    FaRegArrowAltCircleUp,
+    FaRegArrowAltCircleDown,
+    FaDollarSign 
+  } from 'react-icons/fa'
 
 
 const Resume = () => {
     return (
         <div className='resume'>
             <CardBasic
-                title='Entradas'
-                value={0.00}
-                icon={}
+                Title='Entradas'
+                Value={1000.95}
+                Icon={FaRegArrowAltCircleDown}
             />
             <CardBasic
-                title='Saídas'
-                value={0.00}
-                icon={}
+                Title='Saídas'
+                Value={300}
+                Icon={FaRegArrowAltCircleUp}
             />
             <CardBasic 
-                title='Total'
-                value={0.00}
-                icon={}
+                Title='Total'
+                Value={0}
+                Icon={FaDollarSign }
             />
         </div>
     )
 }
-
 export default Resume
