@@ -6,7 +6,7 @@ import Header from '../../components/Header'
 import Resume from '../../components/Resume';
 
 const HomePage = () => {
-    const { authenticated,logout } = useContext(AuthContext);
+    const { logout } = useContext(AuthContext);
     
     const handleLogout = () => {
         logout();
@@ -15,8 +15,7 @@ const HomePage = () => {
     return (
         <div className='home-page'>
             <Header/>
-            <Resume/>
-            <p>{String(authenticated)}</p>
+            <Resume/><br/>
             <Button variant="outlined" onClick={handleLogout}>logout</Button>
         </div>
     )
