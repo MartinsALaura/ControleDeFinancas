@@ -14,6 +14,7 @@ import {
     FaTrash
 } from 'react-icons/fa'
 import { Masks } from '@mui/icons-material';
+import GridItem from '../GridItem';
 
 const Grid = ({itens, setItens}) => {
     const columns = [
@@ -62,20 +63,7 @@ const Grid = ({itens, setItens}) => {
                         </TableHead>
                         <TableBody>
                             {itens?.map((item, index) => (
-                                <TableRow key={index} item={item}>
-                                    <TableCell>{item.desc}</TableCell>
-                                    <TableCell>{item.amount}</TableCell>
-                                    <TableCell align='center'>
-                                        {item.expense ? (
-                                            <FaRegArrowAltCircleDown color='red'/>
-                                        ) : (
-                                            <FaRegArrowAltCircleUp color='green'/>
-                                        )}
-                                    </TableCell>
-                                    <TableCell align='center'>
-                                        <FaTrash onClick={() => onDelete(item.id)}></FaTrash>
-                                    </TableCell>
-                                </TableRow>
+                                <GridItem key={index} item={item} onDelete={onDelete}/>           
                             ))}
                         </TableBody>
                     </Table>

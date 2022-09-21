@@ -5,6 +5,7 @@ import React, { useContext, useState, useEffect } from 'react';
 import Header from '../../components/Header'
 import Resume from '../../components/Resume';
 import Form from '../../components/Form';
+import Grid from '../../components/Grid'
  
 const HomePage = () => {
     const { logout } = useContext(AuthContext);    
@@ -24,6 +25,7 @@ const HomePage = () => {
     const [total, setTotal] = useState(0)
 
     useEffect(() => {
+        
         //Filtro das Saídas 
         const amountExpense = transactionsList
         .filter((item) => item.expense)
@@ -63,6 +65,7 @@ const HomePage = () => {
                 total={total}
             /><br/>
             <Form handleAdd={handleAdd} transactionsList={ transactionsList} setTransactionsList={setTransactionsList}/><br></br>
+            <Grid itens={transactionsList} setItens={setTransactionsList}></Grid>
             <Button variant="outlined" onClick={handleLogout}>logout</Button>
         </div>
     )

@@ -6,7 +6,6 @@ import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import { useState } from 'react';
-import Grid from '../Grid';
 
 const Form = ({handleAdd, setTransactionsList, transactionList}) => {
     const [desc, setDesc] = useState('');
@@ -70,7 +69,6 @@ const Form = ({handleAdd, setTransactionsList, transactionList}) => {
                 </RadioGroup>
                 <Button  variant="contained" onClick={HandleSave}>Adicionar</Button>
             </div>   
-            <Grid itens={transactionList} setItens={setTransactionsList}></Grid>
         </>  
     )
 }
