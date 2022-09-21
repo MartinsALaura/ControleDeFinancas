@@ -10,10 +10,10 @@
 #login .form {
     width: 100%;
     max-width: 480px;
-    border-radius: 20px;
+    border-radius: 5px;
     padding: 36px 64px;
     background-color: #f2f2f2;
-    box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.08);
+    box-shadow: 0px 0px 5px #ccc;
 }
 #login .field{
     padding-bottom: 0.5rem;

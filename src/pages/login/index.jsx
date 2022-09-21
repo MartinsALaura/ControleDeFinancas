@@ -3,12 +3,11 @@ import { AuthContext } from '../../context';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 
-
 //CSS
 import './login.css';
 
 const LoginPage = (props) => {
-    const { authenticated, login } = useContext(AuthContext);
+    const { login } = useContext(AuthContext);
     
     //hooks
     const [email, setEmail] = useState('');
@@ -22,7 +21,6 @@ const LoginPage = (props) => {
     return (
         <div id='login'>
             <h1 className='title'>Login</h1>
-            <p>{String(authenticated)}</p>
             <form className='form'onSubmit={handleSubmit}>
                 <div className='field'>
                     <TextField 

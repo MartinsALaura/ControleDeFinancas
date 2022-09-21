@@ -5,16 +5,17 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import { autocompleteClasses } from '@mui/material';
 
 export default function BasicCard({Title, Icon, Value}) {
   return (
     <Card sx={{ minWidth: 275 }}>  
-      <CardContent>
+      <CardContent >
         <Typography sx={{ fontSize: 16 }} color="text.secondary" gutterBottom>
           {Title}
         </Typography>
         <Typography style={{fontWeight: 600}} variant="h5" component="div">
-          {`R$ ${Value}`}
+          {Value}
         </Typography>
       </CardContent>
         <CardActions style={{justifyContent: 'flex-end',}}>
