@@ -8,12 +8,6 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
-import {
-    FaRegArrowAltCircleUp,
-    FaRegArrowAltCircleDown,
-    FaTrash
-} from 'react-icons/fa'
-import { Masks } from '@mui/icons-material';
 import GridItem from '../GridItem';
 
 const Grid = ({itens, setItens}) => {
@@ -30,7 +24,6 @@ const Grid = ({itens, setItens}) => {
         localStorage.setItem('transactions', JSON.stringify(newArray))
     }
       
-    const rows = [];
     const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(10);
       
