@@ -62,13 +62,13 @@ const Grid = ({itens, setItens}) => {
                     </Table>
                 </TableContainer>
                 <TablePagination
-                rowsPerPageOptions={[10, 25, 100]}
-                component="div"
-                count={10}
-                rowsPerPage={rowsPerPage}
-                page={page}
-                onPageChange={handleChangePage}
-                onRowsPerPageChange={handleChangeRowsPerPage}
+                    rowsPerPageOptions={[10, 25, 100]}
+                    component="div"
+                    count={10}
+                    rowsPerPage={rowsPerPage}
+                    page={page}
+                    onPageChange={handleChangePage}
+                    onRowsPerPageChange={handleChangeRowsPerPage}
                 />
             </Paper>
         </div>
