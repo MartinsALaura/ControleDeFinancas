@@ -35,6 +35,9 @@ export const AuthProvider = ({children}) => {
             setUser(LoggedUser)
             navigate('/')
         }
+        else{
+            alert('Senha inválida!')
+        }
     }
     const logout = () => {
         console.log("logout")
